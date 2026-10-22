@@ -3,7 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hello Pages</title>
+<title>Hello Pages — React SPA на GitHub Pages</title>
+<meta name="description" content="React-приложение на Vite: сборка в CI, публикация на GitHub Pages и интерактивная консоль сборки.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>
+  // Тема и признак работы скриптов — до первой отрисовки,
+  // чтобы страница не мигала светлым фоном на тёмной теме.
+  (function () {
+    var root = document.documentElement;
+    root.classList.add('js');
+    try {
+      var saved = localStorage.getItem('hello-pages-theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      root.dataset.theme = theme;
+    } catch (error) {
+      root.dataset.theme = 'dark';
+    }
+  })();
+</script>
 </head>
 <body>
 <div id="root"></div>
